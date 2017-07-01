@@ -1,0 +1,91 @@
+<style>
+    .data{position: relative; width: 1000px ;height:200px ;top:50px;
+
+    }
+    .charts{width: 800px;height:200px;}
+    .question{position: absolute ;top: 50px;left: 650px}
+
+</style>
+<div style="left: 250px; position: absolute;top:210px;">
+
+<a  class="button orange" href="{:U('ShowData/echarts')}?collegebranch=0">理工科</a>
+<a  class="button orange" href="{:U('ShowData/echarts')}?collegebranch=1">文经管</a>
+
+</div>
+<div>
+<!--div class="data">
+
+    <div class="charts" ></div>
+    <div class="question">42. 大一下学期就开设物理课程了，你如何为之做准备
+        <p>A. 要提前先温习一下高中知识，到图书馆借些书看看&nbsp;
+            </p>
+    </div>
+</div-->
+    {$questionnaire}
+
+</div>
+
+<script type="text/javascript">
+
+    // 基于准备好的dom，初始化echarts实例
+    var divs=document.getElementsByClassName('charts');
+    var count=0;
+    var data={$data};
+    //alert(data[0]['inumber']);
+
+    //var myChart;
+    for(var i =0;i<divs.length;i++ ){
+        var myChart = echarts.init(divs[i]);
+        count=i+1;
+        // 使用刚指定的配置项和数据显示图表。
+        option = {
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical'
+
+            },
+            series : [
+                {
+                    name: '选项',
+                    type: 'pie',
+                    radius : '55%',
+                    center: ['50%', '60%'],
+                    /*
+                     * [1] => array(2) {
+                     ["A"] => string(1) "2"
+                     ["B"] => string(1) "1"
+                     }
+                     * */
+                    data:[
+                        {value:data[count]["A"], name:'A'},
+                        {value:data[count]["B"], name:'B'},
+                        {value:data[count]["C"], name:'C'},
+                        {value:data[count]["D"], name:'D'},
+                        {value:data[count]["E"], name:'E'},
+                        {value:data[count]["F"], name:'F'},
+                        {value:data[count]["G"], name:'G'},
+                        {value:data[count]["H"], name:'H'},
+                        {value:data[count]["I"], name:'I'},
+                        {value:data[count]["J"], name:'J'},
+                        {value:data[count]["K"], name:'K'},
+                        {value:data[count]["L"], name:'L'},
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+
+        myChart.setOption(option);
+    }
+
+</script>
