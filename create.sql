@@ -2,7 +2,7 @@ create database think_stu_questionsnaire;
 use think_stu_questionsnaire;
 create table think_student (idnumber varchar(18) PRIMARY KEY,##身份证号,
 	iterm varchar(10),##学期
-	iuser int(14) NOT NULL,##用户名（考号）
+	iuser varchar(14) NOT NULL,##用户名（考号）
 	passwd varchar(20),##密码（密码为身份证后六位）
 	iname varchar(10),##姓名
 	sex varchar(1),##性别

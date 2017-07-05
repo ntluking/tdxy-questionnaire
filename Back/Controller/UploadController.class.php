@@ -7,7 +7,6 @@ class UploadController extends Controller {
 
 	//登录系统
 	public function upload() {
-		//ini_set('memory_limit', '128M');
 
 		import("Org.Util.PHPExcel");
 		import("Org.Util.PHPExcel.IOFactory");
@@ -37,16 +36,16 @@ class UploadController extends Controller {
 			$sheet         = $objphpexcel->getSheet(0);
 			$highestrow    = $sheet->getHighestRow();
 			$highestcolumn = $sheet->getHighestColumn();
-			for ($i = 4; $i < $highestrow; $i++) {
-				$idnumber      = $objphpexcel->getActiveSheet()->getCell("AC".$i)->getValue();//身份证号
-				$term          = $objphpexcel->getActiveSheet()->getCell("I".$i)->getValue();//学期学年
+			for ($i = 2; $i <= $highestrow; $i++) {
+				$idnumber      = $objphpexcel->getActiveSheet()->getCell("D".$i)->getValue();//身份证号
+				$term          = $objphpexcel->getActiveSheet()->getCell("C".$i)->getValue();//学期学年
 				$iterm         = $term."-".($term+1);
-				$iuser         = $objphpexcel->getActiveSheet()->getCell("BD".$i)->getValue();//用户名，考生号
+				$iuser         = $objphpexcel->getActiveSheet()->getCell("E".$i)->getValue();//用户名，录取通知书编号
 				$passwd        = substr($idnumber, -6);
-				$iname         = $objphpexcel->getActiveSheet()->getCell("B".$i)->getValue();//姓名
-				$sex           = $objphpexcel->getActiveSheet()->getCell("D".$i)->getValue();//性别
-				$college       = $objphpexcel->getActiveSheet()->getCell("E".$i)->getValue();//学院
-				$professional  = $objphpexcel->getActiveSheet()->getCell("G".$i)->getValue();//专业
+				$iname         = $objphpexcel->getActiveSheet()->getCell("A".$i)->getValue();//姓名
+				$sex           = $objphpexcel->getActiveSheet()->getCell("B".$i)->getValue();//性别
+				$college       = $objphpexcel->getActiveSheet()->getCell("G".$i)->getValue();//学院
+				$professional  = $objphpexcel->getActiveSheet()->getCell("H".$i)->getValue();//专业
 				$ichange       = new UploadController();
 				$collegebranch = $ichange->CollegeBranch($professional);//本科分科
 				$istatus       = 0;//答题状态

@@ -1,0 +1,9 @@
+[ 2017-07-03T19:27:14+08:00 ] ::1 /tdxy-questionnaire/index.php/Home/Admin
+ERR: 无法加载控制器:Admin
+
+[ 2017-07-03T19:27:21+08:00 ] ::1 /tdxy-questionnaire/index.php/Home/Admin/
+ERR: 无法加载控制器:Admin
+
+[ 2017-07-03T19:27:30+08:00 ] ::1 /tdxy-questionnaire/index.php/Home/Admin/login.html
+ERR: 无法加载控制器:Admin
+

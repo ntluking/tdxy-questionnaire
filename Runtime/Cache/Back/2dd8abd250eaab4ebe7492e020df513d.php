@@ -82,7 +82,12 @@
 <div class="container">
 <form action="<?php echo U('Upload/upload');?>" enctype="multipart/form-data" method="POST" >
     <input  type="file" name="filename" />
-    <input class="button" type="submit" value="提交" >
+    <input class="button" type="submit" value="提交" ><p>
+    <br>
+    <br>
+</form>
+<form  method="get" accept-charset="utf-8">
+    <a href="/tdxy-questionnaire/Upload/model.xls" class="button">下载模板</a>
 </form>
     <?php echo ($info); ?>
 </div>

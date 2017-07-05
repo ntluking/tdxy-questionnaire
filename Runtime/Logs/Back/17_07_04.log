@@ -1,0 +1,6 @@
+[ 2017-07-04T15:55:58+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/Upload/upload.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '男' for key 'PRIMARY'
+
+[ 2017-07-04T15:58:19+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/Upload/upload.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '321088199801261569' for key 'PRIMARY'
+
