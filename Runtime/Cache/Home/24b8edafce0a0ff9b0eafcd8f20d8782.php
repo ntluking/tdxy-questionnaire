@@ -19,7 +19,7 @@
 <div class="content">
     <!--学校的 logo-->
     <img src="<?php echo (C("IMG_URL")); ?>logo.png" style="left:33%; position: relative" alt="logo">
-    <h1>2017级新生基础课程学情调查问卷</h1>
+    <h1><?php echo ($studata["iterm"]); ?>级新生基础课程学情调查问卷</h1>
     <div class="main">
         <!---后台数据传来学生的个人信息-->
         <h5>名字：<?php echo ($studata["iname"]); ?></h5>

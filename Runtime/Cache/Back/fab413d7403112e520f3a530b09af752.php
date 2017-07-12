@@ -31,10 +31,12 @@
     <nav>
         <ul id="ddmenu">
             <li><a href="<?php echo U('Admin/index');?>">管理中心</a></li>
-            <li><a href="<?php echo U('Upload/upload');?>">上传学生信息</a></li>
+            <li><a href="<?php echo U('Upload/upload');?>">上传信息</a></li>
             <li><a href="<?php echo U('ShowData/echarts');?>">问卷数据分析</a></li>
             <li><a href="<?php echo U('ShowData/suggest');?>">学生建议数据</a></li>
-            <li><a href="<?php echo U('ShowData/searchData');?>">学生信息搜索</a>
+            <li><a href="<?php echo U('ShowData/searchData');?>">学生信息搜索</a></li>
+            <li><a href="<?php echo U('User/adduser');?>">新建账号</a></li>
+            <li><a href="<?php echo U('User/modify');?>">修改密码</a>
 
             </li>
         </ul>

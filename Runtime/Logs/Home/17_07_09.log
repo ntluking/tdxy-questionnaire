@@ -1,0 +1,21 @@
+[ 2017-07-09T14:50:52+08:00 ] ::1 /tdxy-questionnaire/index.php/Home/Index/saveAnswer.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2017-2018-49-510824199705068124' for key 'PRIMARY'
+
+[ 2017-07-09T14:51:03+08:00 ] ::1 /tdxy-questionnaire/index.php/Home/Index/saveAnswer.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2017-2018-1-510824199705068124-0-B' for key 'PRIMARY'
+
+[ 2017-07-09T14:52:27+08:00 ] ::1 /tdxy-questionnaire/index.php/Home/Index/saveAnswer.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2017-2018-49-510824199705068124' for key 'PRIMARY'
+
+[ 2017-07-09T18:05:11+08:00 ] ::1 /tdxy-questionnaire/index.php/Home/Index/saveAnswer.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2017-2018-1-510824199705068124-0-B' for key 'PRIMARY'
+
+[ 2017-07-09T19:45:14+08:00 ] ::1 /tdxy-questionnaire/index.php/Home/Index/saveAnswer.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2017-2018-1-510824199705068124-0-B' for key 'PRIMARY'
+
+[ 2017-07-09T20:04:44+08:00 ] ::1 /tdxy-questionnaire/index.php/Home/Index/saveAnswer.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2017-2018-49-510824199705068124' for key 'PRIMARY'
+
+[ 2017-07-09T20:35:41+08:00 ] ::1 /tdxy-questionnaire/index.php/Home/Index/saveAnswer.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2017-2018-49-510824199705068124' for key 'PRIMARY'
+

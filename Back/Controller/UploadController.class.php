@@ -12,7 +12,6 @@ class UploadController extends Controller {
 		import("Org.Util.PHPExcel.IOFactory");
 
 		if ($_FILES) {
-
 			$upload           = new \Think\Upload();// 实例化上传类
 			$upload->maxSize  = 134217728;// 设置附件上传大小
 			$upload->exts     = array('xlsx', 'xls');// 设置附件上传类型
@@ -50,7 +49,7 @@ class UploadController extends Controller {
 				$collegebranch = $ichange->CollegeBranch($professional);//本科分科
 				$istatus       = 0;//答题状态
 				$model         = M('student');
-				$sql           = "insert into think_student (idnumber,iterm,iuser,passwd,iname,sex,college,professional,collegebranch,istatus) values ('".$idnumber."','".$iterm."','".$iuser."','".$passwd."','".$iname."','".$sex."','".$college."','".$professional."','".$collegebranch."','".$istatus."')";
+				$sql           = "INSERT into think_student (idnumber,iterm,iuser,passwd,iname,sex,college,professional,collegebranch,istatus) values ('".$idnumber."','".$iterm."','".$iuser."','".$passwd."','".$iname."','".$sex."','".$college."','".$professional."','".$collegebranch."','".$istatus."')";
 				echo "$sql<br>";
 				$model->execute($sql);
 				unset($idnumber);

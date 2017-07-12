@@ -1,0 +1,12 @@
+[ 2017-07-06T00:10:22+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/Admin/login.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+[ 2017-07-06T00:11:08+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/Admin/login.html
+ERR: Cannot use object of type Think\Model as array
+
+[ 2017-07-06T00:17:19+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/Admin/login.html
+ERR: Cannot use object of type Think\Model as array
+
+[ 2017-07-06T00:24:43+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/Admin/login.html
+ERR: Cannot use object of type Think\Model as array
+

@@ -31,16 +31,31 @@
     <nav>
         <ul id="ddmenu">
             <li><a href="<?php echo U('Admin/index');?>">管理中心</a></li>
-            <li><a href="<?php echo U('Upload/upload');?>">上传学生信息</a></li>
+            <li><a href="<?php echo U('Upload/upload');?>">上传信息</a></li>
             <li><a href="<?php echo U('ShowData/echarts');?>">问卷数据分析</a></li>
             <li><a href="<?php echo U('ShowData/suggest');?>">学生建议数据</a></li>
-            <li><a href="<?php echo U('ShowData/searchData');?>">学生信息搜索</a>
+            <li><a href="<?php echo U('ShowData/searchData');?>">学生信息搜索</a></li>
+            <li><a href="<?php echo U('User/adduser');?>">新建账号</a></li>
+            <li><a href="<?php echo U('User/modify');?>">修改密码</a>
 
             </li>
         </ul>
     </nav>
 </div>
+<style>
+    .data{position: relative; width: 1000px ;height:200px ;top:50px;
 
+    }
+    .charts{width: 800px;height:200px;}
+    .question{position: absolute ;top: 50px;left: 650px}
+
+</style>
+<div style="left: 250px; position: absolute;top:210px;">
+
+<a  class="button orange" href="<?php echo U('ShowData/suggest');?>?collegebranch=0">理工科</a>
+<a  class="button orange" href="<?php echo U('ShowData/suggest');?>?collegebranch=1">文经管</a>
+
+</div>
 </body>
 
 </html>

@@ -23,6 +23,8 @@ create table think_management (ID int(8) PRIMARY KEY,
 	logincount varchar(6)##登录次数
 	)ENGINE=InnoDB DEFAULT character set=utf8;
 
+ALTER TABLE think_management CHANGE ID ID int auto_increment
+
 create table think_questionsnaire_selected (iterm varchar(9) NOT NULL,
 	inumber int(4) NOT NULL,##题号
 	itype int(1),##0为单选，1为多选

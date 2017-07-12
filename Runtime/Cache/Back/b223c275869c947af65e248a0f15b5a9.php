@@ -43,7 +43,23 @@
     </nav>
 </div>
 <style type="text/css" media="screen">
-    #button {
+	input[type=text],
+    input[type=password] {
+        font-size: 13px;
+        min-height: 32px;
+        margin: 0;
+        padding: 7px 8px;
+        outline: none;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        transition: all 0.15s ease-in;
+        vertical-align: middle;
+    }
+    .button {
         position: relative;
         display: inline-block;
         margin: 0;
@@ -73,28 +89,62 @@
         user-select: none;
         -webkit-appearance: none;
     }
+    .button:focus,
+    input[type=text]:focus,
+    input[type=password]:focus {
+        outline: none;
+        border-color: #51a7e8;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.075), 0 0 5px rgba(81,167,232,.5);
+    }
+
+    #search input[type=text] {
+        font-size: 18px;
+        width: 500px;
+    }
+    #search .button {
+        padding: 10px;
+        width: 90px;
+    }
     .container {
         position:absolute;
         left: 400px;
         top: 250px;
     }
+    .stuinfo{
+        position:absolute;
+        left: 400px;
+        top: 300px;
+    }
+    .stu_div{
+        font-size: 35px;
 
-
+        margin-top: 25px;
+    }
 </style>
 <div class="container">
-<h1><center>上传学生信息</center></h1><br>
-<br>
-<form action="<?php echo U('Upload/upload');?>" enctype="multipart/form-data" method="POST" >
-    <input  type="file" name="filename" />
-    <input class="button" type="submit" value="提交" ><p>
-    <br>
-    <br>
-</form>
-<form  method="get" accept-charset="utf-8">
-    <a href="/tdxy-questionnaire/Upload/model.xls" class="button">下载模板</a>
-</form>
-    <?php echo ($info); ?>
+	<h1>用户名：<?php echo ($iname); ?></h1>
+    <div id="search">
+        <form action="<?php echo U('User/modify');?>" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
+            旧 密 码：<input type="password" name="passwd_old" value="" placeholder="旧密码"><br>
+            <br>
+            新 密 码：<input type="password" name="passwd_new" value="" placeholder="密码不少于8位"><br>
+            <br>
+            确认一次：<input type="password" name="confirm" value="" placeholder="确认一次"><br>
+            <br>
+            <input class="button" type="submit" name="" value="确定">
+        </form>
+    </div>
+    <div>
+        <div>
+            <h2 style="color: green"><?php echo ($manage_success); ?></h2>
+        </div>
+        <div>
+            <h2 style="color: red"><?php echo ($manage_error); ?></h2>
+        </div>
+    </div>
 </div>
+
+
 </body>
 
 </html>
