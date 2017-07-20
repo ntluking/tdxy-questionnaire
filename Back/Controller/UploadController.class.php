@@ -50,7 +50,7 @@ class UploadController extends Controller {
 				$istatus       = 0;//答题状态
 				$model         = M('student');
 				$sql           = "INSERT into think_student (idnumber,iterm,iuser,passwd,iname,sex,college,professional,collegebranch,istatus) values ('".$idnumber."','".$iterm."','".$iuser."','".$passwd."','".$iname."','".$sex."','".$college."','".$professional."','".$collegebranch."','".$istatus."')";
-				echo "$sql<br>";
+				//echo "$sql<br>";
 				$model->execute($sql);
 				unset($idnumber);
 				unset($term);

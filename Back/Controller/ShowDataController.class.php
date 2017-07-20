@@ -36,7 +36,7 @@ class ShowDataController extends Controller {
 		$sql = "SELECT inumber ,answer,count(answer) AS count FROM think_questionsnaire_sanswer
                WHERE collegebranch=".$collegebranch."
                   GROUP BY inumber ,answer;
-";
+ ";
 		$data            = D()->query($sql);
 		$newdata[1]["A"] = 0;
 		//  处理一下统计结果然后返回
@@ -130,9 +130,38 @@ class ShowDataController extends Controller {
 
 	}
 
-	//列出简答题答案
+	//===================
 	public function suggest() {
-		# code...
+		ini_set('memory_limit', '128M');
+		if ($_GET) {
+			$html = $this->getChoiceFanswer($_GET['collegebranch']);
+			$this->assign('freesponce', $html);
+			unset($html);
+		}
+		$this->display();
+	}
+
+	//简答题题目分类,显示题目,显示答案
+	public function getChoiceFanswer($collegebranch) {
+		ini_set('memory_limit', '128M');
+		$sql_branch = "SELECT think_questionsnaire_freesponce.inumber,think_questionsnaire_freesponce.text1 FROM think_questionsnaire_freesponce WHERE think_questionsnaire_freesponce.collegebranch=".$collegebranch;
+		$data       = D()->query($sql_branch);
+		$html       = ""."<div class=\"data\"><div class=\"question\">";
+		//题目
+		for ($i = 0; $i < count($data, COUNT_NORMAL); $i++) {
+			$html        = $html."<h2>".$data[$i]["inumber"].".".$data[$i]["text1"]."</h2>";
+			$sql_fanswer = "SELECT think_questionsnaire_fanswer.text1 FROM think_questionsnaire_fanswer WHERE think_questionsnaire_fanswer.inumber=".$data[$i]["inumber"];
+			$fanswer     = D()->query($sql_fanswer);
+			for ($j = 0; $j < count($fanswer, COUNT_NORMAL); $j++) {
+				if (strlen($fanswer[$j]["text1"]) > 15) {
+					$html_fanswer = "<ul><li>".$fanswer[$j]["text1"]."</li></ul>";
+					$html         = $html.$html_fanswer;
+				}
+			}
+		}
+		$html = $html."</div>";
+		return $html;
+
 	}
 
 	// 主要用来 搜索学生是否完成问卷调查

@@ -47,7 +47,7 @@
 
     }
     .charts{width: 800px;height:200px;}
-    .question{position: absolute ;top: 50px;left: 650px}
+    .question{position: absolute ;top: 50px;left: 300px}
 
 </style>
 <div style="left: 250px; position: absolute;top:210px;">
@@ -56,6 +56,11 @@
 <a  class="button orange" href="<?php echo U('ShowData/suggest');?>?collegebranch=1">文经管</a>
 
 </div>
+<div>
+	<?php echo ($freesponce); ?>
+</div>
+
+
 </body>
 
 </html>

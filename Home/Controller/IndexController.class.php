@@ -157,22 +157,37 @@ class IndexController extends Controller {
 		</div>
 		 * */
 		$html = "";
-
 		for ($i = 0; $i < count($select, COUNT_NORMAL); $i++) {
 			// 标题
 			$html = $html."<h5>".$select[$i]["inumber"].". ".$select[$i]["text1"]."</h5><div class=\"radio-btns\">
             <div class=\"swit\">";
+			//单选默认checked标记
+			$checked = 0;
 
 			for ($j = 0; $j < count($select[$i], COUNT_NORMAL)-3; $j++) {
+
 				// 判断一下 多选还是单选
 				if ($select[$i]["itype"] == "0") {// 单选
-					$html = $html."<div class=\"check_box\"> <div class=\"radio\"><label><input type=\"radio\" name=\"radio".
-					$select[$i]["inumber"]."\" class=\"option\" value=\"".$select[$i]["inumber"]."&"
-					.chr(65+$j)."\"><i></i>".chr(65+$j).".".$select[$i][chr(65+$j)]."</label></div></div>";
+					if ($checked == 0) {
+						$html = $html."<div class=\"check_box\"> <div class=\"radio\"><label><input type=\"radio\" name=\"radio".
+						$select[$i]["inumber"]."\" class=\"option\" value=\"".$select[$i]["inumber"]."&"
+						.chr(65+$j)."\" checked=\"checked\"><i></i>".chr(65+$j).".".$select[$i][chr(65+$j)]."</label></div></div>";
+						$checked = $checked+1;
+					} else {
+						$html = $html."<div class=\"check_box\"> <div class=\"radio\"><label><input type=\"radio\" name=\"radio".
+						$select[$i]["inumber"]."\" class=\"option\" value=\"".$select[$i]["inumber"]."&"
+						.chr(65+$j)."\"><i></i>".chr(65+$j).".".$select[$i][chr(65+$j)]."</label></div></div>";
+					}
 				} else {// 多选
-					$html = $html."<div class=\"check_box\"> <div class=\"radio\"><label><input type=\"radio\" name=\"radio".
-					$select[$i]["inumber"].chr(65+$j)."\" class=\"option\" value=\"".$select[$i]["inumber"]."&"
-					.chr(65+$j)."\"><i></i>".chr(65+$j).".".$select[$i][chr(65+$j)]."</label></div></div>";
+					$html = $html."<div class=\"check_box\"> <div class=\"radio\"><label><input type=\"radio\" id=\"".$select[$i]["inumber"].chr(65+$j)."\" name=\"radio".$select[$i]["inumber"].chr(65+$j)."\" class=\"option\" value=\"".$select[$i]["inumber"]."&"
+					.chr(65+$j)."\"><i></i>"."<span onclick=\"clickRadio".$select[$i]["inumber"].chr(65+$j)."()\">".chr(65+$j).".".$select[$i][chr(65+$j)]."</span>"."</label></div></div>";
+
+					$html = $html."<script  type=\"text/javascript\">function clickRadio".$select[$i]["inumber"].chr(65+$j)."() {
+        if(document.getElementById('".$select[$i]["inumber"].chr(65+$j)."').checked==false){
+            document.getElementById('".$select[$i]["inumber"].chr(65+$j)."').checked=true;}
+        else if(document.getElementById('".$select[$i]["inumber"].chr(65+$j)."').checked==true){
+            document.getElementById('".$select[$i]["inumber"].chr(65+$j)."').checked=false;}
+    }</script>";
 
 					// $html = $html.
 
@@ -180,7 +195,9 @@ class IndexController extends Controller {
 			}
 
 			$html = $html."<div class=\"clear\"></div></div></div>";
+
 		}
+		//echo "<script>alert('hahaha')</script>";
 
 		// 取出填空题
 		$sql_freesponce = "SELECT *FROM think_questionsnaire_freesponce WHERE collegebranch=".$collegebranch;

@@ -1,0 +1,24 @@
+[ 2017-07-17T06:31:41+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/ShowData/echarts.html
+ERR: syntax error, unexpected '.'
+
+[ 2017-07-17T06:31:51+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/ShowData/echarts.html
+ERR: syntax error, unexpected '.'
+
+[ 2017-07-17T06:32:20+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/ShowData/echarts.html
+ERR: syntax error, unexpected '.'
+
+[ 2017-07-17T06:32:25+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/ShowData/echarts.html
+ERR: syntax error, unexpected '.'
+
+[ 2017-07-17T06:40:54+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/ShowData/echarts.html
+ERR: syntax error, unexpected '.'
+
+[ 2017-07-17T21:26:25+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/ShowData/suggest.html?collegebranch=0
+ERR: syntax error, unexpected '；' (T_STRING)
+
+[ 2017-07-17T21:40:39+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/ShowData/suggest.html?collegebranch=0
+ERR: syntax error, unexpected '.'
+
+[ 2017-07-17T23:03:24+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/ShowData/suggest.html?collegebranch=1
+ERR: Call to undefined function Back\Controller\getFanswer()
+

@@ -1,0 +1,6 @@
+[ 2017-07-18T15:24:21+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/ShowData/suggest.html?collegebranch=1
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'think_stu_questionsnaire.think_questionnaire_freesponce' doesn't exist
+
+[ 2017-07-18T15:30:04+08:00 ] ::1 /tdxy-questionnaire/index.php/Back/ShowData/suggest.html?collegebranch=1
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'think_stu_questionsnaire.think_questionnaire_freesponce' doesn't exist
+

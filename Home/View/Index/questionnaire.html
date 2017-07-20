@@ -26,6 +26,20 @@
 
         <h5>专业：{$studata.professional}</h5>
         <h5><div><div style="float:left;">身份证：</div><div style="float:left;" id="idnumber">    {$studata.idnumber}</div></div></h5>
+        <br>
+        <!-- <h5>
+            <div style="float: left;">
+                高中分科：
+            </div>
+            <div style="float: left;">
+                <select name="schoolbranch">
+                    <option name="sci" value="0" selected="selected">理科</option>
+                    <option name="arts" value="1">文科</option>
+                </select>
+            </div>
+        </h5> -->
+        
+        
 
         <!--input type="text" value="johnkeith@mail.com" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'johnkeith@mail.com';}" required="">
         <h5>Your Review <span>( Tips and Guidelines ) </span> </h5>
@@ -128,6 +142,7 @@
     </div>
 
 </div>
+
 <!--到时候 用 JavaScript 完成数据的收集-->
 <script type="text/javascript">
     function submitAll() {
@@ -168,6 +183,15 @@
         post(url, answer_select, answer_fill);
     }
 
+    /*function clickRadio() {
+        if(document.getElementById('selected1').checked==false){
+            document.getElementById('selected1').checked=true;
+        }
+        else if(document.getElementById('selected1').checked==true){
+            document.getElementById('selected1').checked=false;}
+        
+    }*/
+
     function post(URL, answer_select, answer_fill) {
         var temp = document.createElement("form");
         temp.action = URL;
@@ -195,6 +219,10 @@
         temp.submit();
         return temp;
     }
+
+
+
+
 
 </script>
 </body>
