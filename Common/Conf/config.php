@@ -12,6 +12,14 @@ return array(
 	'use_only_cookies'    =>  0,                               //是否只开启基于cookies的session的会话方式
 	),*/
 	'SESSION_OPTIONS' => array('use_only_cookies' => 0, 'use_trans_sid' => 1),
+	'URL_ROUTER_ON'   => true,
+	'URL_ROUTE_RULES' => array(
+		//前端
+		'Index' => 'Home/Index/login',
+		//后台
+		'Admin' => 'Back/Admin/login',
+	),
+	//'URL_MODEL'       => 2,
 
 	//前台  Home 配置
 	'CSS_URL' => '/tdxy-questionnaire/Home/Public/css/',

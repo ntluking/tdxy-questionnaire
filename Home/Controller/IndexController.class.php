@@ -338,6 +338,7 @@ class IndexController extends Controller {
 			'length'   => 4, // 验证码位数
 			'fontttf'  => '4.ttf', // 验证码字体，不设置随机获取
 		);
+		ob_clean();
 		//实例化Verify类对象
 		$very = new \Think\Verify($cfg);
 		$very->entry();
